@@ -1,0 +1,19 @@
+{
+  "name": "Career Forge",
+  "short_name": "Career Forge",
+  "description": "Paste a job. Get a Claude prompt. Paste Claude's reply. See what you'd need to learn.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
