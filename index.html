@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Career Forge">
+<meta name="theme-color" content="#0f172a">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="styles.css">
+<title>Career Forge</title>
+</head>
+<body>
+
+<header class="topbar">
+  <button id="backBtn" class="link-btn" hidden>&larr; Back</button>
+  <h1 id="topTitle">Career Forge</h1>
+  <span class="topbar-spacer"></span>
+</header>
+
+<main id="app">
+
+  <!-- ============ HOME VIEW ============ -->
+  <section id="view-home" class="view">
+    <p class="lede">Paste a job you want. Generate a prompt. Copy it into Claude. Paste Claude's reply back. See what you'd need to learn.</p>
+
+    <form id="jobForm" autocomplete="off">
+      <label for="jobText">Job listing</label>
+      <textarea id="jobText" rows="10" placeholder="Paste the full job listing here…" required></textarea>
+
+      <label for="companyName">Company (optional)</label>
+      <input id="companyName" type="text" placeholder="Company name">
+
+      <label for="background">Your current background &amp; skills</label>
+      <textarea id="background" rows="8" placeholder="What you've studied, worked on, tools you know, projects you've done…" required></textarea>
+
+      <div class="row-btns">
+        <button type="button" id="tryExampleBtn" class="btn-ghost">Try the example</button>
+        <button type="submit" class="btn-primary">Generate Analysis Prompt</button>
+      </div>
+    </form>
+
+    <section id="savedSection">
+      <h2>Saved analyses</h2>
+      <ul id="savedList" class="saved-list"></ul>
+      <p id="emptyMsg" class="muted">No saved analyses yet.</p>
+    </section>
+  </section>
+
+  <!-- ============ PROMPT VIEW ============ -->
+  <section id="view-prompt" class="view" hidden>
+    <h2>1. Copy this prompt</h2>
+    <p class="muted">Open the Claude app, paste this in, send it, then come back.</p>
+    <div class="prompt-box">
+      <pre id="promptOutput"></pre>
+    </div>
+    <button id="copyBtn" class="btn-primary full">Copy prompt</button>
+
+    <h2>2. Paste Claude's response</h2>
+    <textarea id="responseInput" rows="12" placeholder="Paste Claude's full reply here…"></textarea>
+    <button id="saveBtn" class="btn-primary full">Save Analysis</button>
+    <p id="parseMsg" class="parse-msg" hidden></p>
+  </section>
+
+  <!-- ============ ANALYSIS VIEW ============ -->
+  <section id="view-analysis" class="view" hidden>
+    <p id="analysisMeta" class="muted"></p>
+
+    <div class="analysis-section" data-key="required">
+      <h2>Required Qualifications</h2>
+      <ul></ul>
+    </div>
+    <div class="analysis-section" data-key="preferred">
+      <h2>Preferred Qualifications</h2>
+      <ul></ul>
+    </div>
+    <div class="analysis-section" data-key="tools">
+      <h2>Tools &amp; Software</h2>
+      <ul></ul>
+    </div>
+    <div class="analysis-section" data-key="responsibilities">
+      <h2>Core Responsibilities</h2>
+      <ul></ul>
+    </div>
+    <div class="analysis-section have" data-key="have">
+      <h2>What I Already Have</h2>
+      <ul></ul>
+    </div>
+    <div class="analysis-section learn" data-key="learn">
+      <h2>What I Need to Learn</h2>
+      <ul></ul>
+    </div>
+
+    <details class="raw-details">
+      <summary>Show raw Claude response</summary>
+      <pre id="rawResponse"></pre>
+    </details>
+
+    <button id="deleteBtn" class="btn-danger full">Delete this analysis</button>
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

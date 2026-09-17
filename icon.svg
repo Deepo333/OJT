@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" ry="112" fill="#0f172a"/>
+  <g fill="none" stroke="#f8fafc" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <!-- anvil -->
+    <path d="M128 320 h256 a24 24 0 0 1 24 24 v16 H104 v-16 a24 24 0 0 1 24-24 z"/>
+    <path d="M176 320 v-56 a40 40 0 0 1 40 -40 h80 a40 40 0 0 1 40 40 v56"/>
+    <!-- rising arrow -->
+    <path d="M176 240 L240 176 L296 232 L360 152"/>
+    <path d="M320 152 h40 v40"/>
+  </g>
+</svg>
